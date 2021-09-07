@@ -14,11 +14,15 @@ public class Platformer extends Click2dApplication {
     ArrayList<Rect> rects = new ArrayList<Rect>();
     ShapeRenderer renderer = new ShapeRenderer();
     Boolean isonground = false;
+    SpriteBatch batch;
     Camera cam = new Camera(this);
+    Texture pimg;
     @Override
     public void create() {
         this.name = "Platformer";
         rects.add(new Rect(0, 600, 1280, 150));
+        pimg = new Texture("src/com/mithilank/testgame/platformer/Player.png");
+        batch = new SpriteBatch();
     }
 
     @Override
@@ -79,6 +83,8 @@ public class Platformer extends Click2dApplication {
             renderer.DrawRect(rect.position, rect.width, rect.height, Color.WHITE);
         }
         renderer.End();
+
+
         this.window.getGraphics().drawImage(renderedimg, 0, 0, null);
         
     }

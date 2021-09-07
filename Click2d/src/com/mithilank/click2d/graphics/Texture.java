@@ -16,7 +16,6 @@ public class Texture {
             System.out.println("Not Valid Image");
         }
     }
-
     public void Draw (SpriteBatch batch, Vector2 pos) {
         batch.DrawImg(this.img, pos);
     }

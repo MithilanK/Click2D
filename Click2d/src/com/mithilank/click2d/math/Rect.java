@@ -24,5 +24,12 @@ public class Rect {
                 position.y < rect.position.y + rect.height);
     }
 
+    public Boolean CollidePoint (Vector2 point) {
+        return (point.x > this.position.x &&
+                point.x < this.position.x + this.width &&
+                point.y > this.position.y &&
+                point.y < this.position.y + this.width);
+    }
+
 
 }

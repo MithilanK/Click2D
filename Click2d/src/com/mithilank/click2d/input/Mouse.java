@@ -5,12 +5,27 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class Mouse implements MouseListener {
-    public Boolean left;
-    public Boolean right;
-    public Boolean middle;
+    public Boolean left = false;
+    public Boolean leftjustdown = false;
+    public Boolean right = false;
+    public Boolean rightjustdown = false;
+    public Boolean middle = false;
+    public Boolean middlejustdown = false;
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        switch (e.getButton()) {
+            case MouseEvent.BUTTON1:
+                leftjustdown = true;
+                break;
+            case MouseEvent.BUTTON2:
+                middlejustdown = true;
+                break;
+            case MouseEvent.BUTTON3:
+                rightjustdown = true;
+                break;
+
+        }
 
     }
 
@@ -21,10 +36,10 @@ public class Mouse implements MouseListener {
                 left = true;
                 break;
             case MouseEvent.BUTTON2:
-                right = true;
+                middle = true;
                 break;
             case MouseEvent.BUTTON3:
-                middle = true;
+                right = true;
                 break;
 
         }
